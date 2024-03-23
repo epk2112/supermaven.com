@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from supermaven.com/blog/introducing-supermaven by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Feb 2024 08:50:00 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=utf-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="https://supermaven.com/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://supermaven.com/logo-and-text.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="../_next/static/css/34b82275db681e0c.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchPriority="low"
+      href="../_next/static/chunks/webpack-3c060b67d309adb6.js"
+    />
+    <script
+      src="../_next/static/chunks/fd9d1056-e22bf0dadd3b7f72.js"
+      async=""
+    ></script>
+    <script
+      src="../_next/static/chunks/938-25aa9593006d0751.js"
+      async=""
+    ></script>
+    <script
+      src="../_next/static/chunks/main-app-01dcb8892b176af1.js"
+      async=""
+    ></script>
+    <script
+      src="../_next/static/chunks/615-b10ccd71302a8466.js"
+      async=""
+    ></script>
+    <script
+      src="../_next/static/chunks/app/layout-a86a0d99a38c7ce2.js"
+      async=""
+    ></script>
+    <title>Supermaven</title>
+    <meta
+      name="description"
+      content="The fastest copilot. Supermaven uses a 300,000-token context window to provide the highest quality code completions."
+    />
+    <link
+      rel="icon"
+      href="https://supermaven.com/favicon.ico"
+      type="image/x-icon"
+      sizes="128x128"
+    />
+    <meta name="next-size-adjust" />
+    <script
+      src="../_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"
+      nomodule=""
+    ></script>
+    <script>
+      window.addEventListener("load", function () {
+        var nav = document.getElementsByTagName("nav")[0];
+        var footer = document.getElementsByTagName("footer")[0];
+        nav.parentNode.removeChild(nav);
+        footer.parentNode.removeChild(footer);
+      });
+    </script>
+  </head>
+  <body class="__className_aaf875">
+    <div class="background-image-container"></div>
+    <div class="layout-container">
+      <nav>
+        <a href="https://supermaven.com/"
+          ><img
+            src="https://supermaven.com/logo-and-text.svg"
+            alt="Supermaven logo"
+            class="logo-image"
+        /></a>
+        <div class="spacer"></div>
+        <a href="pricing.html" class="nav-item plain-nav-item"
+          ><div>Pricing</div></a
+        ><a href="download.html" class="nav-item plain-nav-item"
+          ><div>Download</div></a
+        ><a
+          href="blog/introducing-supermaven.html"
+          class="nav-item plain-nav-item"
+          ><div>Blog</div></a
+        >
+        <div class="nav-item"><button>Login</button></div>
+      </nav>
+      <div>
+        <div class="blog-post">
+          <h2>
+            Introducing Supermaven, the first code completion tool with a
+            300,000-token context window
+          </h2>
+          <div class="blog-subheading">
+            <div class="blog-subheading-author">Jacob Jackson</div>
+            <div class="blog-subheading-date">Thu Feb 22 2024</div>
+          </div>
+          <div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>Frames</th>
+                    <th>Latency (ms)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Supermaven</td>
+                    <td>15</td>
+                    <td>250</td>
+                  </tr>
+                  <tr>
+                    <td>Copilot</td>
+                    <td>47</td>
+                    <td>783</td>
+                  </tr>
+                  <tr>
+                    <td>Codeium</td>
+                    <td>53</td>
+                    <td>883</td>
+                  </tr>
+                  <tr>
+                    <td>Tabnine</td>
+                    <td>50</td>
+                    <td>833</td>
+                  </tr>
+                  <tr>
+                    <td>Cursor</td>
+                    <td>113</td>
+                    <td>1,883</td>
+                  </tr>
+                </tbody>
+              </table>
+              <center><em>See below for details.</em></center>
+              <p>
+                Code completion has come a long way. When I created TabNine in
+                2018, the first tool to use deep learning for code completion,
+                there were few developer tools that used AI. The models were
+                small, the capabilities were limited, and people were skeptical
+                that the tools were useful enough to be worth paying for.
+              </p>
+              <p>
+                Since then, AI coding tools have been widely adopted: GitHub
+                recently
+                <a
+                  href="https://www.theinformation.com/briefings/microsoft-github-copilot-revenue-100-million-ARR-ai"
+                  >announced</a
+                >
+                that its tool Copilot had reached $100 million in annual
+                recurring revenue. Millions of developers now use AI tools every
+                day. This adoption is driven by the deployment of large models
+                with tens of billions of parameters that are much more useful
+                than the models of 2018.
+              </p>
+              <p>
+                Given that code completion has &quot;gone mainstream&quot;,
+                given the growing size of the largest language models, and given
+                the enormous costs involved in training the largest models, it
+                raises the question: is there still room for small startups? Has
+                code completion become the exclusive province of large players
+                like Microsoft or Google?
+              </p>
+              <p>
+                At Supermaven we believe the question is not yet settled. The
+                reason is the high serving costs of large models. While a model
+                like GPT-4 offers unmatched suggestion quality, it&#x27;s
+                impossible to run on every keystroke (unless you charge users
+                $1,000/month). Today, the deployment of an AI coding tool is
+                limited just as much by the cost of the GPUs to run the tool as
+                by the cost to develop the tool itself. That&#x27;s why Copilot
+                has
+                <a
+                  href="https://thakkarparth007.github.io/copilot-explorer/posts/copilot-internals.html#preventing-poor-requests-via-contextual-filter"
+                  >made efforts</a
+                >
+                to reduce costs by limiting the contexts in which they offer
+                suggestions.
+              </p>
+              <p>
+                The high cost of serving a code completion tool levels the
+                playing field: it means that everyone, whether a small startup
+                or Microsoft, must use a small model to remain profitable. The
+                best product is the one which uses a small model most
+                effectively.
+              </p>
+              <p>So how is Supermaven different?</p>
+              <h3 id="300000-token-context-window">
+                300,000-token context window
+              </h3>
+              <p>
+                The context window of a code completion model determines how
+                much of your code it can take into account when making its
+                suggestions. A long context window is crucial to delivering good
+                completions - that&#x27;s why Copilot
+                <a
+                  href="https://github.blog/changelog/2023-08-28-github-copilot-august-28th-update/#expanding-copilots-context-window-to-8k"
+                  >recently expanded</a
+                >
+                its context window to 8,192 tokens.
+              </p>
+              <p>
+                At Supermaven we&#x27;ve developed and trained from scratch a
+                new neural network architecture which is more efficient than a
+                Transformer (the current standard architecture) at integrating
+                information across a long context window. This allows us to
+                offer a 300,000-token context window while keeping the cost and
+                latency the same as a Transformer with a 4,000-token context
+                window.
+              </p>
+              <p>
+                As a user, that means that after Supermaven spends 10-20 seconds
+                processing your repository, it will become familiar with your
+                APIs and the unique conventions of your codebase. That fixes one
+                of the most common complaints about Copilot: that while
+                it&#x27;s great at working with well-known APIs and libraries
+                that have good coverage in the training data, it struggles with
+                the large, idiosyncratic codebases that you get when using it
+                for real work.
+              </p>
+              <p>
+                Here&#x27;s a simple example of the difference that a
+                300,000-token context window makes. In this example, I ran
+                Supermaven and Copilot on the same code and asked them to
+                generate a function called <code>doubleIndentation</code> taking
+                a value of type <code>Indentation</code>. Because the
+                <code>Indentation</code> struct isn&#x27;t defined or used
+                anywhere in the file, Copilot doesn&#x27;t have any information
+                about it in context, so it generates code that doesn&#x27;t
+                compile. Supermaven generates correct code because its context
+                window is large enough to fit the entire 50,000-token
+                repository.
+              </p>
+              <video
+                src="https://cdn.supermaven.com/video/longdef.mp4"
+                controls=""
+                width="100%"
+                height="auto"
+                style="max-width: 100%"
+              ></video>
+              <h3 id="speed">Speed</h3>
+              <p>
+                Supermaven is fast: we&#x27;ve built custom infrastructure to
+                keep it responsive while working with the long prompts that come
+                with large codebases.
+              </p>
+              <p>
+                I designed a simple test to compare Supermaven to the
+                competition. To ensure each tool has the prompt in cache, I
+                started with a context where every tool agrees the most likely
+                completion is <code>for (let i</code>. Then I typed
+                <code>for (let j</code>, forcing each tool to generate a new
+                completion, and measured the number of frames between the
+                appearance of &#x27;j&#x27; on the screen and the appearance of
+                the completion. Here are the results:
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>Frames</th>
+                    <th>Latency (ms)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Supermaven</td>
+                    <td>15</td>
+                    <td>250</td>
+                  </tr>
+                  <tr>
+                    <td>Copilot</td>
+                    <td>47</td>
+                    <td>783</td>
+                  </tr>
+                  <tr>
+                    <td>Codeium</td>
+                    <td>53</td>
+                    <td>883</td>
+                  </tr>
+                  <tr>
+                    <td>Tabnine</td>
+                    <td>50</td>
+                    <td>833</td>
+                  </tr>
+                  <tr>
+                    <td>Cursor</td>
+                    <td>113</td>
+                    <td>1,883</td>
+                  </tr>
+                </tbody>
+              </table>
+              <video
+                src="https://cdn.supermaven.com/video/speed_comparison.mp4"
+                controls=""
+                width="100%"
+                height="auto"
+                style="max-width: 100%"
+              ></video>
+              <h3 id="trained-on-edit-sequences-not-just-files">
+                Trained on edit sequences, not just files
+              </h3>
+              <p>
+                Unlike most code assistants, Supermaven doesn&#x27;t see your
+                code as a sequence of files. Instead, Supermaven sees the
+                sequence of edits you&#x27;ve made to your codebase - similar to
+                what you&#x27;d see if you ran <code>git diff</code>. This helps
+                Supermaven quickly understand what you&#x27;re trying to
+                accomplish, and it&#x27;s great for refactoring. Here are some
+                examples:
+              </p>
+              <video
+                src="https://cdn.supermaven.com/video/edit_sequence.mp4"
+                controls=""
+                width="100%"
+                height="auto"
+                style="max-width: 100%"
+              ></video>
+              <h3 id="try-it-now">Try it now</h3>
+              <p>
+                <a href="https://supermaven.com/download"
+                  >Download Supermaven</a
+                >
+                to try it for yourself. We&#x27;re excited to see what you think
+                of it.
+              </p>
+              <p>
+                If you don&#x27;t use VS Code,
+                <a href="https://twitter.com/SupermavenAI"
+                  >follow us on Twitter</a
+                >
+                to find out when Supermaven is ready for your preferred editor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <footer>
+        <p class="text-xs">
+          <span style="color: #89d4fd">©</span> 2024 Supermaven, Inc.
+        </p>
+        <div class="spacer"></div>
+        <ul>
+          <li><a href="https://supermaven.com/contact">Contact Us</a></li>
+          <li>
+            <a href="https://supermaven.com/privacy-policy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="https://supermaven.com/terms-of-service"
+              >Terms of Service</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <script
+      src="../_next/static/chunks/webpack-3c060b67d309adb6.js"
+      async=""
+    ></script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0]);
+      self.__next_f.push([2, null]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1:HL["/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n2:HL["/_next/static/css/34b82275db681e0c.css","style"]\n0:"$L3"\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '4:I[7690,[],""]\n7:I[5613,[],""]\n9:I[1778,[],""]\na:I[5717,["615","static/chunks/615-b10ccd71302a8466.js","185","static/chunks/app/layout-a86a0d99a38c7ce2.js"],""]\nd:I[8955,[],""]\n8:["slug","introducing-supermaven","d"]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '3:[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/34b82275db681e0c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","$L4",null,{"buildId":"xw8vV8z1B3ONmOfZlNHbm","assetPrefix":"","initialCanonicalUrl":"/blog/introducing-supermaven","initialTree":["",{"children":["blog",{"children":[["slug","introducing-supermaven","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],"initialSeedData":["",{"children":["blog",{"children":[["slug","introducing-supermaven","d"],{"children":["__PAGE__",{},["$L5","$L6",null]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$8","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}]]},[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_aaf875","children":[["$","div",null,{"className":"background-image-container"}],["$","$La",null,{}],["$","div",null,{"className":"layout-container","children":["$Lb",["$","div",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","main",null,{"children":["$","center",null,{"children":"Page not found."}]}],"notFoundStyles":[],"styles":null}]}],["$","div",null,{"className":"spacer"}],["$","footer",null,{"children":[["$","p",null,{"className":"text-xs","children":[["$","span",null,{"style":{"color":"#89d4fd"},"children":"©"}]," 2024 Supermaven, Inc."]}],["$","div",null,{"className":"spacer"}],["$","ul",null,{"children":[["$","li",null,{"children":["$","a",null,{"href":"/contact","children":"Contact Us"}]}],["$","li",null,{"children":["$","a",null,{"href":"/privacy-policy","children":"Privacy Policy"}]}],["$","li",null,{"children":["$","a",null,{"href":"/terms-of-service","children":"Terms of Service"}]}]]}]]}]]}]]}]}],null]],"initialHead":[false,"$Lc"],"globalErrorComponent":"$d"}]]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'e:I[3293,["615","static/chunks/615-b10ccd71302a8466.js","185","static/chunks/app/layout-a86a0d99a38c7ce2.js"],""]\nf:I[1629,["615","static/chunks/615-b10ccd71302a8466.js","185","static/chunks/app/layout-a86a0d99a38c7ce2.js"],""]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '6:["$","div",null,{"className":"blog-post","children":[["$","h2",null,{"children":"Introducing Supermaven, the first code completion tool with a 300,000-token context window"}],["$","div",null,{"className":"blog-subheading","children":[["$","div",null,{"className":"blog-subheading-author","children":"Jacob Jackson"}],["$","div",null,{"className":"blog-subheading-date","children":"Thu Feb 22 2024"}]]}],["$","div",null,{"children":["$","div","outer",{"children":[["$","table","0",{"className":"$undefined","children":[["$","thead",null,{"className":"$undefined","children":["$","tr",null,{"className":"$undefined","children":[["$","th","0",{"style":{},"className":"$undefined","children":["Tool"]}],["$","th","1",{"style":{},"className":"$undefined","children":["Frames"]}],["$","th","2",{"style":{},"className":"$undefined","children":["Latency (ms)"]}]]}]}],["$","tbody",null,{"className":"$undefined","children":[["$","tr","0",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Supermaven"]}],["$","td","1",{"style":{},"className":"$undefined","children":["15"]}],["$","td","2",{"style":{},"className":"$undefined","children":["250"]}]]}],["$","tr","1",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Copilot"]}],["$","td","1",{"style":{},"className":"$undefined","children":["47"]}],["$","td","2",{"style":{},"className":"$undefined","children":["783"]}]]}],["$","tr","2",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Codeium"]}],["$","td","1",{"style":{},"className":"$undefined","children":["53"]}],["$","td","2",{"style":{},"className":"$undefined","children":["883"]}]]}],["$","tr","3",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Tabnine"]}],["$","td","1",{"style":{},"className":"$undefined","children":["50"]}],["$","td","2",{"style":{},"className":"$undefined","children":["833"]}]]}],["$","tr","4",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Cursor"]}],["$","td","1",{"style":{},"className":"$undefined","children":["113"]}],["$","td","2",{"style":{},"className":"$undefined","children":["1,883"]}]]}]]}]]}],["$","center","1",{"className":"$undefined","children":[["$","em","0",{"className":"$undefined","children":["See below for details."]}]]}],["$","p","2",{"className":"$undefined","children":["Code completion has come a long way. When I created TabNine in 2018, the first tool to use deep learning for code completion, there were few developer tools that used AI. The models were small, the capabilities were limited, and people were skeptical that the tools were useful enough to be worth paying for."]}],["$","p","3",{"className":"$undefined","children":["Since then, AI coding tools have been widely adopted: GitHub recently ",["$","a","3",{"href":"https://www.theinformation.com/briefings/microsoft-github-copilot-revenue-100-million-ARR-ai","title":"$undefined","className":"$undefined","children":["announced"]}]," that its tool Copilot had reached $100 million in annual recurring revenue. Millions of developers now use AI tools every day. This adoption is driven by the deployment of large models with tens of billions of parameters that are much more useful than the models of 2018."]}],["$","p","4",{"className":"$undefined","children":["Given that code completion has \\"gone mainstream\\", given the growing size of the largest language models, and given the enormous costs involved in training the largest models, it raises the question: is there still room for small startups? Has code completion become the exclusive province of large players like Microsoft or Google?"]}],["$","p","5",{"className":"$undefined","children":["At Supermaven we believe the question is not yet settled. The reason is the high serving costs of large models. While a model like GPT-4 offers unmatched suggestion quality, it\'s impossible to run on every keystroke (unless you charge users $1,000/month). Today, the deployment of an AI coding tool is limited just as much by the cost of the GPUs to run the tool as by the cost to develop the tool itself. That\'s why Copilot has ",["$","a","7",{"href":"https://thakkarparth007.github.io/copilot-explorer/posts/copilot-internals.html#preventing-poor-requests-via-contextual-filter","title":"$undefined","className":"$undefined","children":["made efforts"]}]," to reduce costs by limiting the contexts in which they offer suggestions."]}],["$","p","6",{"className":"$undefined","children":["The high cost of serving a code completion tool levels the playing field: it means that everyone, whether a small startup or Microsoft, must use a small model to remain profitable. The best product is the one which uses a small model most effectively."]}],["$","p","7",{"className":"$undefined","children":["So how is Supermaven different?"]}],["$","h3","8",{"id":"300000-token-context-window","className":"$undefined","children":["300,000-token context window"]}],["$","p","9",{"className":"$undefined","children":["The context window of a code completion model determines how much of your code it can take into account when making its suggestions. A long context window is crucial to delivering good completions - that\'s why Copilot ",["$","a","2",{"href":"https://github.blog/changelog/2023-08-28-github-copilot-august-28th-update/#expanding-copilots-context-window-to-8k","title":"$undefined","className":"$undefined","children":["recently expanded"]}]," its context window to 8,192 tokens."]}],["$","p","10",{"className":"$undefined","children":["At Supermaven we\'ve developed and trained from scratch a new neural network architecture which is more efficient than a Transformer (the current standard architecture) at integrating information across a long context window. This allows us to offer a 300,000-token context window while keeping the cost and latency the same as a Transformer with a 4,000-token context window."]}],"\\n",["$","p","13",{"className":"$undefined","children":["As a user, that means that after Supermaven spends 10-20 seconds processing your repository, it will become familiar with your APIs and the unique conventions of your codebase. That fixes one of the most common complaints about Copilot: that while it\'s great at working with well-known APIs and libraries that have good coverage in the training data, it struggles with the large, idiosyncratic codebases that you get when using it for real work."]}],["$","p","14",{"className":"$undefined","children":["Here\'s a simple example of the difference that a 300,000-token context window makes. In this example, I ran Supermaven and Copilot on the same code and asked them to generate a function called ",["$","code","4",{"className":"$undefined","children":"doubleIndentation"}]," taking a value of type ",["$","code","6",{"className":"$undefined","children":"Indentation"}],". Because the ",["$","code","8",{"className":"$undefined","children":"Indentation"}]," struct isn\'t defined or used anywhere in the file, Copilot doesn\'t have any information about it in context, so it generates code that doesn\'t compile. Supermaven generates correct code because its context window is large enough to fit the entire 50,000-token repository."]}],["$","video","15",{"src":"https://cdn.supermaven.com/video/longdef.mp4","controls":"controls","width":"100%","height":"auto","style":{"maxWidth":"100%","":""},"className":"$undefined","children":[]}],["$","h3","16",{"id":"speed","className":"$undefined","children":["Speed"]}],["$","p","17",{"className":"$undefined","children":["Supermaven is fast: we\'ve built custom infrastructure to keep it responsive while working with the long prompts that come with large codebases."]}],["$","p","18",{"className":"$undefined","children":["I designed a simple test to compare Supermaven to the competition. To ensure each tool has the prompt in cache, I started with a context where every tool agrees the most likely completion is ",["$","code","2",{"className":"$undefined","children":"for (let i"}],". Then I typed ",["$","code","4",{"className":"$undefined","children":"for (let j"}],", forcing each tool to generate a new completion, and measured the number of frames between the appearance of \'j\' on the screen and the appearance of the completion. Here are the results:"]}],["$","table","19",{"className":"$undefined","children":[["$","thead",null,{"className":"$undefined","children":["$","tr",null,{"className":"$undefined","children":[["$","th","0",{"style":{},"className":"$undefined","children":["Tool"]}],["$","th","1",{"style":{},"className":"$undefined","children":["Frames"]}],["$","th","2",{"style":{},"className":"$undefined","children":["Latency (ms)"]}]]}]}],["$","tbody",null,{"className":"$undefined","children":[["$","tr","0",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Supermaven"]}],["$","td","1",{"style":{},"className":"$undefined","children":["15"]}],["$","td","2",{"style":{},"className":"$undefined","children":["250"]}]]}],["$","tr","1",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Copilot"]}],["$","td","1",{"style":{},"className":"$undefined","children":["47"]}],["$","td","2",{"style":{},"className":"$undefined","children":["783"]}]]}],["$","tr","2",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Codeium"]}],["$","td","1",{"style":{},"className":"$undefined","children":["53"]}],["$","td","2",{"style":{},"className":"$undefined","children":["883"]}]]}],["$","tr","3",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Tabnine"]}],["$","td","1",{"style":{},"className":"$undefined","children":["50"]}],["$","td","2",{"style":{},"className":"$undefined","children":["833"]}]]}],["$","tr","4",{"className":"$undefined","children":[["$","td","0",{"style":{},"className":"$undefined","children":["Cursor"]}],["$","td","1",{"style":{},"className":"$undefined","children":["113"]}],["$","td","2",{"style":{},"className":"$undefined","children":["1,883"]}]]}]]}]]}],["$","video","20",{"src":"https://cdn.supermaven.com/video/speed_comparison.mp4","controls":"controls","width":"100%","height":"auto","style":{"maxWidth":"100%","":""},"className":"$undefined","children":[]}],["$","h3","21",{"id":"trained-on-edit-sequences-not-just-files","className":"$undefined","children":["Trained on edit sequences, not just files"]}],["$","p","22",{"className":"$undefined","children":["Unlike most code assistants, Supermaven doesn\'t see your code as a sequence of files. Instead, Supermaven sees the sequence of edits you\'ve made to your codebase - similar to what you\'d see if you ran ",["$","code","4",{"className":"$undefined","children":"git diff"}],". This helps Supermaven quickly understand what you\'re trying to accomplish, and it\'s great for refactoring. Here are some examples:"]}],["$","video","23",{"src":"https://cdn.supermaven.com/video/edit_sequence.mp4","controls":"controls","width":"100%","height":"auto","style":{"maxWidth":"100%","":""},"className":"$undefined","children":[]}],["$","h3","24",{"id":"try-it-now","className":"$undefined","children":["Try it now"]}],["$","p","25",{"className":"$undefined","children":[["$","a","0",{"href":"/download","title":"$undefined","className":"$undefined","children":["Download Supermaven"]}]," to try it for yourself. We\'re excited to see what you think of it."]}],["$","p","26",{"className":"$undefined","children":["If you don\'t use VS Code, ",["$","a","2",{"href":"https://twitter.com/SupermavenAI","title":"$undefined","className":"$undefined","children":["follow us on Twitter"]}]," to find out when Supermaven is ready for your preferred editor."]}]]}]}]]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'b:["$","nav",null,{"children":[["$","a",null,{"href":"/","children":["$","img",null,{"src":"/logo-and-text.svg","alt":"Supermaven logo","className":"logo-image"}]}],["$","div",null,{"className":"spacer"}],["$","$Le",null,{"displayText":"Pricing","href":"pricing"}],["$","$Le",null,{"displayText":"Download","href":"download"}],["$","$Le",null,{"displayText":"Blog","href":"blog/introducing-supermaven"}],["$","$Lf",null,{"isLoggedIn":false}]]}]\nc:[["$","meta","0",{"name":"viewport","content":"width=device-width',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        ', initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Supermaven"}],["$","meta","3",{"name":"description","content":"The fastest copilot. Supermaven uses a 300,000-token context window to provide the highest quality code completions."}],["$","link","4",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"128x128"}],["$","meta","5",{"name":"next-size-adjust"}]]\n5:null\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([1, ""]);
+    </script>
+  </body>
+  <!-- Mirrored from supermaven.com/blog/introducing-supermaven by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Feb 2024 08:50:07 GMT -->
+</html>
